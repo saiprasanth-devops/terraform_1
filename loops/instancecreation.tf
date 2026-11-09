@@ -1,5 +1,6 @@
 resource "aws_instance" "instances_creations" {
-    count = 2
+    #count = 2
+    count = length(var.instanceslist)
   ami           = "ami-0055977a6e828a4f4" # Replace with a valid AMI ID for your region
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.my_sg[count.index].id]
@@ -12,7 +13,9 @@ resource "aws_instance" "instances_creations" {
 
 # 1. Create the Security Group
 resource "aws_security_group" "my_sg" {
-    count = 2
+    #count = 2
+    count = length(var.instanceslist)
+
   name        = "allow-ssh-http-${var.instanceslist[count.index]}"
   description = "Allow SSH and HTTP traffic"
 
