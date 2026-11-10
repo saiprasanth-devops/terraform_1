@@ -1,0 +1,25 @@
+# Core Terraform directories and local state
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Exclude all variable files since they often contain secrets
+*.tfvars
+*.tfvars.json
+
+# Exclude override files as they are typically used for local adjustments
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you specifically want to track (optional example)
+# !example_override.tf
+
+# CLI configuration files
+.terraformrc
+terraform.rc
