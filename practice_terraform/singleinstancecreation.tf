@@ -34,3 +34,12 @@ resource "aws_security_group" "allow_tls" {
     Name = "allow_tls"
   }
 }
+
+
+resource "aws_route53_record" "web" {
+  zone_id = "Z063293532TA5U290WZK9"
+  name    = "terraform.godeploy.online"
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.my_server.public_ip]
+}
