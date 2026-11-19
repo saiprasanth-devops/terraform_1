@@ -1,0 +1,6 @@
+variable "instancetype"{
+
+
+    type = string
+
+}

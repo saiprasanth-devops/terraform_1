@@ -43,3 +43,5 @@ resource "aws_route53_record" "web" {
   ttl     = 1
   records = [aws_instance.my_server.public_ip]
 }
+
+
